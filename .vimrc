@@ -19,6 +19,9 @@ Bundle 'klen/python-mode'
 Bundle 'kien/ctrlp.vim'
 Bundle 'kchmck/vim-coffee-script'
 
+Bundle 'scrooloose/syntastic'
+" :SyntasticInfo - check conf and currently available checkers 
+
 filetype plugin indent on     " required!
 
 syntax on
@@ -58,3 +61,4 @@ set nofoldenable
 " git clone https://github.com/kien/ctrlp.vim.git bundle/ctrlp.vim
 " :helptags ~/.vim/bundle/ctrlp.vim/doc
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:pymode_rope_lookup_project = 0

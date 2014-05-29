@@ -16,6 +16,8 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 Bundle 'klen/python-mode'
+let pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe', 'pylint']
+
 Bundle 'kien/ctrlp.vim'
 Bundle 'kchmck/vim-coffee-script'
 

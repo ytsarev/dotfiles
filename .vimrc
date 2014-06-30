@@ -24,6 +24,8 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'scrooloose/syntastic'
 " :SyntasticInfo - check conf and currently available checkers 
 
+Bundle 'rodjek/vim-puppet'
+
 filetype plugin indent on     " required!
 
 syntax on

@@ -1,0 +1,17 @@
+[user]
+	name = Yury Tsarev
+	email = yury.tsarev@gooddata.com
+[color]
+	ui = true
+[push]
+	default = simple
+[pull]
+	rebase = true
+[rerere]
+	enabled = true
+[alias]
+	s = status -s
+	lg = log --oneline --decorate --all --graph
+	co = checkout
+	br = branch -v
+	ci = commit

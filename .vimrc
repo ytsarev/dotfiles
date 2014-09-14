@@ -26,6 +26,9 @@ Bundle 'scrooloose/syntastic'
 
 Bundle 'rodjek/vim-puppet'
 
+" Handlebars
+Bundle 'mustache/vim-mustache-handlebars'
+
 filetype plugin indent on     " required!
 
 syntax on

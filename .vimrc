@@ -12,7 +12,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
-" required! 
+" required!
 Bundle 'gmarik/vundle'
 
 Bundle 'klen/python-mode'
@@ -22,12 +22,17 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'kchmck/vim-coffee-script'
 
 Bundle 'scrooloose/syntastic'
-" :SyntasticInfo - check conf and currently available checkers 
+" :SyntasticInfo - check conf and currently available checkers
 
 Bundle 'rodjek/vim-puppet'
 
 " Handlebars
+
 Bundle 'mustache/vim-mustache-handlebars'
+
+" Trailing Whitespaces
+
+Bundle 'trailing-whitespace'
 
 filetype plugin indent on     " required!
 

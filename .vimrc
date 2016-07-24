@@ -34,6 +34,12 @@ Bundle 'mustache/vim-mustache-handlebars'
 
 Bundle 'trailing-whitespace'
 
+" Gundo
+Bundle 'sjl/gundo.vim'
+
+" Ag.vim, a vim frontend to https://github.com/ggreer/the_silver_searcher
+Bundle 'rking/ag.vim'
+
 filetype plugin indent on     " required!
 
 syntax on
@@ -74,3 +80,20 @@ set nofoldenable
 " :helptags ~/.vim/bundle/ctrlp.vim/doc
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:pymode_rope_lookup_project = 0
+
+" From http://dougblack.io/words/a-good-vimrc.html
+set cursorline
+set wildmenu
+let mapleader=","       " leader is comma
+" jk is escape
+inoremap jk <esc>
+" toggle gundo
+nnoremap <leader>u :GundoToggle<CR>
+" edit vimrc/zshrc and load vimrc bindings
+nnoremap <leader>ev :vsp $MYVIMRC<CR>
+nnoremap <leader>eb :vsp ~/.bashrc<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
+" save session
+nnoremap <leader>s :mksession<CR>
+" open ag.vim
+nnoremap <leader>a :Ag

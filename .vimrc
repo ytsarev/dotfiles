@@ -40,6 +40,9 @@ Bundle 'sjl/gundo.vim'
 " Ag.vim, a vim frontend to https://github.com/ggreer/the_silver_searcher
 Bundle 'rking/ag.vim'
 
+Bundle 'fatih/vim-go'
+Bundle 'roxma/SimpleAutoComplPop'
+
 filetype plugin indent on     " required!
 
 syntax on
@@ -97,3 +100,36 @@ nnoremap <leader>sv :source $MYVIMRC<CR>
 nnoremap <leader>s :mksession<CR>
 " open ag.vim
 nnoremap <leader>a :Ag
+nnoremap tn     :tabnew<CR>
+
+" From https://github.com/fatih/vim-go-tutorial
+set autowrite
+map <C-n> :cnext<CR>
+map <C-m> :cprevious<CR>
+nnoremap <leader>a :cclose<CR>
+autocmd FileType go nmap <leader>r  <Plug>(go-run)
+autocmd FileType go nmap <leader>t  <Plug>(go-test)
+autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
+autocmd FileType go nmap <Leader>i <Plug>(go-info)
+let g:go_auto_type_info = 1
+" run :GoBuild or :GoTestCompile based on the go file
+function! s:build_go_files()
+  let l:file = expand('%')
+  if l:file =~# '^\f\+_test\.go$'
+    call go#cmd#Test(0, 1)
+  elseif l:file =~# '^\f\+\.go$'
+    call go#cmd#Build(0)
+  endif
+endfunction
+
+autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
+let g:go_fmt_command = "goimports"
+" 1. variables are all defined in current scope, use keyword from current
+" buffer for completion `<C-x><C-n>`
+" 2. When the '.' is pressed, use smarter omnicomplete `<C-x><C-o>`, this
+" works well with the vim-go plugin
+autocmd FileType go call sacp#enableForThisBuffer({ "matches": [
+            \ { '=~': '\v[a-zA-Z]{4}$' , 'feedkeys': "\<C-x>\<C-n>"} ,
+            \ { '=~': '\.$'            , 'feedkeys': "\<C-x>\<C-o>", "ignoreCompletionMode":1} ,
+            \ ]
+            \ })

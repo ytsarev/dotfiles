@@ -1,4 +1,13 @@
+" Whole thing is based on https://tpaschalis.github.io/vim-go-setup/
+" Plugin installation:
+" git clone https://github.com/fatih/vim-go.git ~/.vim/pack/plugins/start/vim-go
+" git clone https://github.com/scrooloose/nerdtree.git ~/.vim/pack/dist/start/nerdtree
+" git clone https://github.com/vim-airline/vim-airline ~/.vim/pack/dist/start/vim-airline
+" git clone https://github.com/tpope/vim-fugitive.git ~/.vim/pack/dist/start/vim-fugitive
+
 syntax on
+" mkdir -p ~/.vim/colors
+" https://raw.githubusercontent.com/marcopaganini/termschool-vim-theme/master/colors/termschool.vim
 colo termschool
 
 " Flash screen instead of beep sound

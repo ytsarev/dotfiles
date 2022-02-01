@@ -1,5 +1,7 @@
+[http]
+#	proxy = http://127.0.0.1:8080
 [user]
-	email = xnull@opensuse.org
+	email = yury.tsarev@absa.africa
 	name = Yury Tsarev
 	signingkey = 6671E24D4DE1A0E6
 [color]
@@ -29,3 +31,5 @@
 	gpgsign = true
 [format]
     	signOff = true
+[fetch]
+	prune = true

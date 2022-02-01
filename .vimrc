@@ -1,14 +1,10 @@
-" Whole thing is based on https://tpaschalis.github.io/vim-go-setup/
-" Plugin installation:
+" Plugin installation
+" Source of inspiration: https://tpaschalis.github.io/vim-go-setup/
 " git clone https://github.com/fatih/vim-go.git ~/.vim/pack/plugins/start/vim-go
 " git clone https://github.com/scrooloose/nerdtree.git ~/.vim/pack/dist/start/nerdtree
 " git clone https://github.com/vim-airline/vim-airline ~/.vim/pack/dist/start/vim-airline
-" git clone https://github.com/tpope/vim-fugitive.git ~/.vim/pack/dist/start/vim-fugitive
 " git clone https://github.com/bronson/vim-trailing-whitespace ~/.vim/pack/dist/start/vim-trailing-whitespace
-
 syntax on
-" mkdir -p ~/.vim/colors
-" https://raw.githubusercontent.com/marcopaganini/termschool-vim-theme/master/colors/termschool.vim
 colo termschool
 
 " Flash screen instead of beep sound
@@ -59,7 +55,7 @@ let g:go_fmt_command = "goimports"
 " Status line types/signatures.
 let g:go_auto_type_info = 1
 
-"au filetype go inoremap <buffer> . .<C-x><C-o>
+" au filetype go inoremap <buffer> . .<C-x><C-o>
 
 " If you want to disable gofmt on save
 " let g:go_fmt_autosave = 0
@@ -73,10 +69,14 @@ let g:go_auto_type_info = 1
 " air-line plugin specific commands
 "let g:airline_powerline_fonts = 1
 
-
 " Jump to the last position when
 " reopening a file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal! g'\"" | endif
 endif
+
+" vim-terraform
+
+let g:terraform_align=1
+let g:terraform_fmt_on_save=1

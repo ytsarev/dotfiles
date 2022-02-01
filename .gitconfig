@@ -33,3 +33,5 @@
     	signOff = true
 [fetch]
 	prune = true
+[credential]
+	helper = store

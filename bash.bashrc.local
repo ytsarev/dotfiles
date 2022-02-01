@@ -4,3 +4,12 @@ PROMPT_COMMAND='history -a'
 
 alias k=kubectl
 complete -F __start_kubectl k
+
+# https://github.com/rupa/z
+. ~/bin/z
+
+# saml2aws
+export SAML2AWS_CONFIGFILE=~/.config/saml2aws
+
+# gpg wtf
+export GPG_TTY=$(tty)

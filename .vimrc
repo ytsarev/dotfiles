@@ -4,6 +4,7 @@
 " git clone https://github.com/scrooloose/nerdtree.git ~/.vim/pack/dist/start/nerdtree
 " git clone https://github.com/vim-airline/vim-airline ~/.vim/pack/dist/start/vim-airline
 " git clone https://github.com/bronson/vim-trailing-whitespace ~/.vim/pack/dist/start/vim-trailing-whitespace
+" git clone https://github.com/hashivim/vim-terraform.git ~/.vim/pack/plugins/start/vim-terraform
 syntax on
 colo termschool
 

@@ -1,9 +1,9 @@
 [http]
 #	proxy = http://127.0.0.1:8080
 [user]
-	email = yury.tsarev@absa.africa
+	email = yury@upbound.io
 	name = Yury Tsarev
-	signingkey = 6671E24D4DE1A0E6
+	signingkey = C2B59637508731E5
 [color]
 	ui = true
 [push]

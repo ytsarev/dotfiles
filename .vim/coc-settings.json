@@ -1,0 +1,12 @@
+{
+  "languageserver": {
+    "xpls": {
+      "command": "up",
+      "args": ["xpls", "serve", "--verbose"],
+      "filetypes": ["yaml"],
+      "scope": "window",
+      "initializationOptions": {},
+      "settings": {}
+    }
+  }
+}

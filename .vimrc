@@ -89,3 +89,6 @@ endif
 
 let g:terraform_align=1
 let g:terraform_fmt_on_save=1
+
+" coc autocomplete
+inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"

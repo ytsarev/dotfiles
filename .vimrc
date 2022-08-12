@@ -5,6 +5,10 @@
 " git clone https://github.com/vim-airline/vim-airline ~/.vim/pack/dist/start/vim-airline
 " git clone https://github.com/bronson/vim-trailing-whitespace ~/.vim/pack/dist/start/vim-trailing-whitespace
 " https://github.com/sonph/onehalf/tree/master/vim
+" mkdir -p ~/.vim/pack/coc/start
+" cd ~/.vim/pack/coc/start
+" git clone --branch release https://github.com/neoclide/coc.nvim.git --depth=1
+" vim -c "helptags coc.nvim/doc/ | q"
 syntax on
 set t_Co=256
 set cursorline

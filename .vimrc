@@ -6,8 +6,7 @@
 " git clone https://github.com/bronson/vim-trailing-whitespace ~/.vim/pack/dist/start/vim-trailing-whitespace
 " https://github.com/sonph/onehalf/tree/master/vim
 " mkdir -p ~/.vim/pack/coc/start
-" cd ~/.vim/pack/coc/start
-" git clone --branch release https://github.com/neoclide/coc.nvim.git --depth=1
+" cd ~/.vim/pack/coc/start && git clone --branch release https://github.com/neoclide/coc.nvim.git --depth=1
 " vim -c "helptags coc.nvim/doc/ | q"
 syntax on
 set t_Co=256
@@ -96,3 +95,7 @@ let g:terraform_fmt_on_save=1
 
 " coc autocomplete
 inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
+
+" Make it obvious where 80 characters is
+set textwidth=80
+set colorcolumn=+1

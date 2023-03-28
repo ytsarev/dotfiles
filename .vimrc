@@ -8,6 +8,7 @@
 " mkdir -p ~/.vim/pack/coc/start
 " cd ~/.vim/pack/coc/start && git clone --branch release https://github.com/neoclide/coc.nvim.git --depth=1
 " vim -c "helptags coc.nvim/doc/ | q"
+" git clone https://github.com/github/copilot.vim.git ~/.vim/pack/github/start/copilot.vim
 syntax on
 set t_Co=256
 set cursorline

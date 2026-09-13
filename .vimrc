@@ -5,10 +5,17 @@
 " git clone https://github.com/vim-airline/vim-airline ~/.vim/pack/dist/start/vim-airline
 " git clone https://github.com/bronson/vim-trailing-whitespace ~/.vim/pack/dist/start/vim-trailing-whitespace
 " https://github.com/sonph/onehalf/tree/master/vim
-" mkdir -p ~/.vim/pack/coc/start
+" mkdir -p ~/.vim/pack/coc/start # replaced by vim-lsp
 " cd ~/.vim/pack/coc/start && git clone --branch release https://github.com/neoclide/coc.nvim.git --depth=1
 " vim -c "helptags coc.nvim/doc/ | q"
 " git clone https://github.com/github/copilot.vim.git ~/.vim/pack/github/start/copilot.vim
+" git clone https://github.com/prabirshrestha/vim-lsp ~/.vim/pack/dist/start/vim-lsp
+" # Core asyncomplete plugin
+" git clone https://github.com/prabirshrestha/asyncomplete.vim ~/.vim/pack/dist/start/asyncomplete.vim
+" # LSP source for asyncomplete
+" git clone https://github.com/prabirshrestha/asyncomplete-lsp.vim ~/.vim/pack/dist/start/asyncomplete-lsp.vim
+" vim-kcl
+" git clone https://github.com/kcl-lang/vim-kcl.git ~/.vim/pack/plugins/start/vim-kcl
 syntax on
 set t_Co=256
 set cursorline
@@ -95,8 +102,43 @@ let g:terraform_align=1
 let g:terraform_fmt_on_save=1
 
 " coc autocomplete
-inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
+" inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
 
 " Make it obvious where 80 characters is
 set textwidth=80
 set colorcolumn=+1
+
+
+" KCL setup
+" File type detection for KCL
+au BufRead,BufNewFile *.k set filetype=kcl
+
+" Configure KCL language server
+if executable('kcl-language-server')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'kcl-language-server',
+        \ 'cmd': {server_info->['kcl-language-server']},
+        \ 'allowlist': ['kcl'],
+        \ 'workspace_config': {},
+        \ })
+endif
+
+" vim-lsp settings
+let g:lsp_diagnostics_enabled = 1
+let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_text_edit_enabled = 1
+
+" asyncomplete settings
+let g:asyncomplete_auto_popup = 1
+let g:asyncomplete_auto_completeopt = 0
+set completeopt=menuone,noinsert,noselect,preview
+
+" Optional: some useful keybindings
+nmap <buffer> gd <plug>(lsp-definition)
+nmap <buffer> gr <plug>(lsp-references)
+nmap <buffer> gi <plug>(lsp-implementation)
+nmap <buffer> gt <plug>(lsp-type-definition)
+nmap <buffer> <leader>rn <plug>(lsp-rename)
+nmap <buffer> [g <plug>(lsp-previous-diagnostic)
+nmap <buffer> ]g <plug>(lsp-next-diagnostic)
+nmap <buffer> K <plug>(lsp-hover)

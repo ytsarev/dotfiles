@@ -26,7 +26,7 @@
 [apply]
 	whitespace = warn
 [gpg]
-	program = /usr/local/bin/gpg
+	#program = /usr/local/bin/gpg
 [commit]
 	gpgsign = true
 [format]
@@ -35,3 +35,22 @@
 	prune = true
 [credential]
 	helper = store
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true  # use n and N to move between diff sections
+    dark = true      # or light = true, or omit for auto-detection
+
+[merge]
+    conflictStyle = zdiff3
